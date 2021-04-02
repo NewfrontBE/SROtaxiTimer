@@ -10,6 +10,7 @@
       <button @click="add30P1" class="button">+ 30min</button>
       <button @click="add60P1" class="button">+ 60min</button>
       <button @click="resetP1" class="button resetbutton">RESET</button>
+      <span v-if="player1Status">Time left: {{player1TimeLeft}} minutes</span>
   </form>
 
 <!--Player 2 -->
@@ -23,6 +24,7 @@
       <button @click="add30P2" class="button">+ 30min</button>
       <button @click="add60P2" class="button">+ 60min</button>
       <button @click="resetP2" class="button resetbutton">RESET</button>
+      <span v-if="player2Status">Time left: {{player2TimeLeft}} minutes</span>
   </form>
 
 <!--Player 3 -->
@@ -36,6 +38,7 @@
       <button @click="add30P3" class="button">+ 30min</button>
       <button @click="add60P3" class="button">+ 60min</button>
       <button @click="resetP3" class="button resetbutton">RESET</button>
+      <span v-if="player3Status">Time left: {{player3TimeLeft}} minutes</span>
   </form>
 
 <!--Player 4 -->
@@ -49,6 +52,7 @@
       <button @click="add30P4" class="button">+ 30min</button>
       <button @click="add60P4" class="button">+ 60min</button>
       <button @click="resetP4" class="button resetbutton">RESET</button>
+      <span v-if="player4Status">Time left: {{player4TimeLeft}} minutes</span>
   </form>
 
 <!--Player 5 -->
@@ -62,6 +66,7 @@
       <button @click="add30P5" class="button">+ 30min</button>
       <button @click="add60P5" class="button">+ 60min</button>
       <button @click="resetP5" class="button resetbutton">RESET</button>
+      <span v-if="player5Status">Time left: {{player5TimeLeft}} minutes</span>
   </form>
 
 <!--Player 6 -->
@@ -75,6 +80,7 @@
       <button @click="add30P6" class="button">+ 30min</button>
       <button @click="add60P6" class="button">+ 60min</button>
       <button @click="resetP6" class="button resetbutton">RESET</button>
+      <span v-if="player6Status">Time left: {{player6TimeLeft}} minutes</span>
   </form>
 
 </template>
@@ -84,22 +90,22 @@ export default {
     data(){
         return {
             player1Name: '',
-            player1TimeLeft: 5,
+            player1TimeLeft: 60,
             player1Status: false,
             player2Name: '',
-            player2TimeLeft: 5,
+            player2TimeLeft: 60,
             player2Status: false,
             player3Name: '',
-            player3TimeLeft: 5,
+            player3TimeLeft: 60,
             player3Status: false,
             player4Name: '',
-            player4TimeLeft: 5,
+            player4TimeLeft: 60,
             player4Status: false,
             player5Name: '',
-            player5TimeLeft: 5,
+            player5TimeLeft: 60,
             player5Status: false,
             player6Name: '',
-            player6TimeLeft: 5,
+            player6TimeLeft: 60,
             player6Status: false,
             timer: null,
             timer2: null,
@@ -114,7 +120,6 @@ export default {
             this.player1Status = true
             this.timer = setInterval(() => {
                 this.player1TimeLeft -= 1
-                console.log(this.timer)
                 if(this.player1TimeLeft === 0){
                     this.player1Status = false
                     clearInterval(this.timer)
@@ -310,7 +315,7 @@ input {
     color:white;
 }
 .resetbutton {
-    margin: 0 0 0 50px;
+    margin: 0 20px 0 50px;
     background: #573d2f;
     color: white;
 }
