@@ -3,6 +3,7 @@
     <h1 class="title">SRO Taxi Timer [Silkroad Online]</h1>
     <p class="description">Leave this tab open while using the timer. Refreshing or closing the tab will reset all timers.</p>
     <Taxiform />
+    <p class="backlink"><a href="https://www.elitepvpers.com/" target="_blank" style="color:#808080;">Elitepvpers</a></p>
   </div>
 </template>
 
@@ -25,5 +26,9 @@ export default {
 }
 .description {
   margin: 0.5rem 0 2rem 0;
+}
+.backlink {
+  color: #808080;
+  margin:60px;
 }
 </style>
